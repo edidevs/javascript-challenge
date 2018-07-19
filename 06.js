@@ -2,26 +2,29 @@
 #6 Count words
 */
 
-var input = "Aku ingin begini Aku ingin begitu Ingin ini itu banyak sekali Semua semua semua Dapat dikabulkan Dapat dikabulkan Dengan kantong ajaib Aku ingin terbang bebas Di angkasa Hei… baling baling bambu La... la... la...Aku sayang sekali Doraemon La... la... la... Aku sayang sekali";
+function words(str){
 
-var arrayInput = input.split(/\s+/);
+    return str.split(" ").reduce(function(count, word){
+        count[word] = count.hasOwnProperty(word) ? count[word] + 1 : 1; 
 
-var numberOfWords = Object.create(null);
+        return count;             
 
-for (i = 0; i < arrayInput.length; i++) {
-    var word = arrayInput[i];
-    
-    if (!arrayInput[word]) {
-        numberOfWords[word] = 1;
-    } else {
-    
-        numberOfWords[word]++;
-    }
+
+    }, {});
+
+
+
+
 }
 
-console.log(numberOfWords); 
+let newObj = words("Aku ingin begini Aku ingin begitu Ingin ini itu banyak sekali Semua semua semua Dapat dikabulkan Dapat dikabulkan Dengan kantong ajaib Aku ingin terbang bebas Di angkasa Hei… baling baling bambu La... la... la...Aku sayang sekali Doraemon La... la... la...Aku sayang sekali "); 
+console.log("Aku:" + newObj["Aku"]);
+console.log("ingin:" + newObj["ingin"]);
+console.log("dapat :" + newObj["Dapat"]);
 
-//sorry, this program has not been completed, I still need more time to find a solution 
 
 
- 
+
+
+
+
